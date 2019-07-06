@@ -1,0 +1,140 @@
+.btn-space {
+    margin-right: 5px;
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 70vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+h1.main {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 45px;
+    letter-spacing: 2px;
+}
+
+span {
+    color: #f44336;
+}
+
+.search-field {
+    height: 50px;
+    padding: 10px;
+}
+
+.skills {
+    width: 400px;
+}
+
+.location {
+    width: 200px;
+}
+
+.search-btn {
+    height: 50px;
+    width: 150px;
+    background: #f44336;
+    border: none;
+    color: #fff;
+}
+
+.search-btn:hover {
+    background: #bb0d00;
+    cursor: pointer;
+}
+
+.form-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px 50px;
+}
+
+h1.left {
+    width: 40%;
+    float: left;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 5%;
+    font-family: sans-serif;
+    margin-bottom: 8%;
+}
+
+h5.right {
+    width: 60%;
+    float: right;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+
+.right {
+    float: right;
+    width: 60%;
+}
+
+.btn {
+    margin-bottom: 5px;
+}
+
+.post {
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+
+.find {
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+.pink {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.foot {
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+}
+
+.move {
+    padding-left: 47%;
+}
+
+.sign1 {
+    justify-content: center;
+}
+
+.sign {
+    margin-top: 5%;
+}
+
+.filter {
+    width: 20%;
+    float: left;
+}
+
+.jobs {
+    width: 78%;
+    float: right;
+}
