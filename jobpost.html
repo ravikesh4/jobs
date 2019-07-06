@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Auto Jobs</title>
@@ -24,9 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">HOME</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="jobs.html">JOBS</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
@@ -42,100 +43,75 @@
                     <a class="nav-link" href="employer.html">EMPLOYERS</a>
                 </li>
             </ul>
-            <form class="form-inline" action="signup.html">
-                <button class="btn btn-outline-success my-2 my-sm-0 btn-space" type="submit"> JOIN NOW</button>
-            </form>
-            <form class="form-inline" action="login.html">
+            <h1><i class="fas fa-user"></i></h1>
+            <a href="index.html" class="btn btn-outline-success my-2 my-sm-0">Logout</a>
+            <!-- <form class="form-inline" action="elogin.html">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SIGN IN</button>
-            </form>
+            </form> -->
         </div>
     </nav>
+    <br>
 
-
-    <form class="container" action="login.html">
-        <h1 style="text-align: center">REGISTER</h1><br />
+    <form class="container">
+        <h1 style="text-align: center">Post A Job</h1><br />
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputFname"></label>First Name:</label>
-                <input type="text" class="form-control" id="inputFname" placeholder="First Name">
+                <label for="inputFname"></label>Key Role:</label>
+                <input type="text" class="form-control" id="inputFname" placeholder="Key Role">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputLname"></label>Last Name:</label>
-                <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
+                <label for="inputLname"></label>Experience:</label>
+                <input type="number" class="form-control" id="inputLname" placeholder="0">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="inputAddress">Address:</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Address">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <label for="inputSalary">Salary:</label>
+                <input type="text" class="form-control" id="inputSalary" placeholder="Salary">
             </div>
         </div>
 
-        <!-- <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" placeholder="City" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
+                <label for="inputSalary">Employment Type:</label>
+                <select class="form-control form-control-lg">
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
                 </select>
             </div>
-            <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" placeholder="Zip" id="inputZip">
+            <div class="form-group col-md-6">
+                <label for="inputSalary">Desired Candidate Profile:</label>
+                <input type="text" class="form-control" id="inputSalary" placeholder="Desired Candidate Profile">
             </div>
-        </div> -->
-        <h4>Total Exeperience</h4>
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Year" id="inputYear">
-            </div>
-            <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Month" id="inputMonth">
-            </div>
-            <!-- <div class="form-group col-md-3">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" placeholder="Zip" id="inputZip">
-            </div> -->
-
-            <div class="custom-file form-group col-md-6">
-                <label for="inputZip">Zip</label>
-                <label class="custom-file-label" for="customFile">Upload Your Resume</label>
-                <input type="file" class="custom-file-input" id="customFile" placeholder="Upload Your Resume">
-
-            </div>
-
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Job Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Job Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Company Profile</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Company Profile"></textarea>
         </div>
 
         <div class="form-group">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
-                  Accept Term and Conditions
-                </label>
+                      Accept Term and Conditions
+                    </label>
             </div>
         </div>
-        <span class="move"><button type="submit" class="btn btn-primary">Sign Up</button></span>
+        <span class="move"><button type="submit" class="btn btn-primary">Post</button></span>
     </form>
 
 
 
 
-
-
-
-
+    <br>
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4 foot">
 
@@ -210,14 +186,14 @@
                             <a href="employer.html">Post a Job</a>
                         </li>
                         <!-- <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li> -->
+                                <a href="#!">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!">Link 4</a>
+                            </li> -->
                     </ul>
 
                 </div>
@@ -261,7 +237,6 @@
 
     </footer>
     <!-- Footer -->
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

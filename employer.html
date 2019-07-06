@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Auto Jobs</title>
@@ -24,9 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">HOME</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="jobs.html">JOBS</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
@@ -42,81 +43,62 @@
                     <a class="nav-link" href="employer.html">EMPLOYERS</a>
                 </li>
             </ul>
-            <form class="form-inline" action="signup.html">
-                <button class="btn btn-outline-success my-2 my-sm-0 btn-space" type="submit"> JOIN NOW</button>
-            </form>
-            <form class="form-inline" action="login.html">
+            <form class="form-inline" action="elogin.html">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SIGN IN</button>
             </form>
         </div>
     </nav>
-
-
-    <form class="container" action="login.html">
-        <h1 style="text-align: center">REGISTER</h1><br />
+    <br>
+    <div class="container">
+        <div class="job-image">
+            <img src="https://previews.123rf.com/images/kitkana/kitkana1501/kitkana150100001/35073310-lots-of-people-icons-illustrations-all-connecting-together-.jpg" width="400" height="500" alt="Job Image">
+        </div>
+        <div class="job-form">
+            <form action="elogin.html">
+                <h1 style="text-align: center">REGISTER</h1><br />
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputFname"></label>Company Name:</label>
+                        <input type="text" class="form-control" id="inputFname" placeholder="Company Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email:</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <p></p>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword">Password:</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword">Confirm Password:</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
+                    </div>
+                </div>
+        </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputFname"></label>First Name:</label>
-                <input type="text" class="form-control" id="inputFname" placeholder="First Name">
+                <label for="inputFname"></label>Contact Person's Name:</label>
+                <input type="text" class="form-control" id="inputFname" placeholder="Contact Person's Name">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputLname"></label>Last Name:</label>
-                <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
+                <label for="inputFname"></label>Mobile Number:</label>
+                <input type="text" class="form-control" pattern="[0-9]{10}" id="inputFname" placeholder="Mobile Number">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <label for="inputFname"></label>Designation:</label>
+                <input type="text" class="form-control" id="inputFname" placeholder="Designation">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <label for="inputFname"></label>Office Address:</label>
+                <input type="text" class="form-control" id="inputFname" placeholder="Office Address">
             </div>
         </div>
 
-        <!-- <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" placeholder="City" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" placeholder="Zip" id="inputZip">
-            </div>
-        </div> -->
-        <h4>Total Exeperience</h4>
-        <div class="form-row">
-            <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Year" id="inputYear">
-            </div>
-            <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Month" id="inputMonth">
-            </div>
-            <!-- <div class="form-group col-md-3">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" placeholder="Zip" id="inputZip">
-            </div> -->
-
-            <div class="custom-file form-group col-md-6">
-                <label for="inputZip">Zip</label>
-                <label class="custom-file-label" for="customFile">Upload Your Resume</label>
-                <input type="file" class="custom-file-input" id="customFile" placeholder="Upload Your Resume">
-
-            </div>
-
-        </div>
 
         <div class="form-group">
             <div class="form-check">
@@ -126,15 +108,51 @@
                 </label>
             </div>
         </div>
-        <span class="move"><button type="submit" class="btn btn-primary">Sign Up</button></span>
-    </form>
+        <button type="submit" class="btn btn-primary">Sign Up</button></span>
+        </form>
+    </div>
+    </div>
+    <br><br><br>
+    <div class="container">
+        <h1 style="text-align: center">Why With Us:</h1><br>
+        <div class="row ">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Search Best Talent with Naukri’s Resume Database Access - Resdex</h5>
+                        <p class="card-text">Our network gives us a deep, up-to-date, and insightful dataset of professionals. We use that data to match your role to the most qualified professionals. </p>
+                        <p class="card-text btn btn-primary">Contact Directly</p>
+                        <p class="card-text btn btn-primary">Verified Candidates</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Search Best Talent with Naukri’s Resume Database Access - Resdex</h5>
+                        <p class="card-text">Our network gives us a deep, up-to-date, and insightful dataset of professionals. We use that data to match your role to the most qualified professionals. </p>
+                        <p class="card-text btn btn-primary">Contact Directly</p>
+                        <p class="card-text btn btn-primary">Verified Candidates</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Search Best Talent with Naukri’s Resume Database Access - Resdex</h5>
+                        <p class="card-text">Our network gives us a deep, up-to-date, and insightful dataset of professionals. We use that data to match your role to the most qualified professionals. </p>
+                        <p class="card-text btn btn-primary">Contact Directly</p>
+                        <p class="card-text btn btn-primary">Verified Candidates</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
+    <br>
 
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4 foot">
@@ -261,7 +279,6 @@
 
     </footer>
     <!-- Footer -->
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
