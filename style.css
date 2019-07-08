@@ -151,3 +151,57 @@ a:hover {
     width: 60%;
     float: right;
 }
+
+
+/* responsive code for index page */
+
+@media only screen and (max-width: 600px) {
+    .header h1 {
+        font-size: 20px;
+    }
+    .header input[type=text] {
+        width: 100%;
+    }
+    .find h1 {
+        font-size: 20px;
+        font-weight: 600;
+        float: none;
+        width: 100%;
+    }
+    .left h5 {
+        font-size: 20px;
+        float: none;
+    }
+}
+
+
+/* End Of Index Responsive */
+
+
+/* Responsive code for Jobs Page */
+
+@media only screen and (max-width:600px) {
+    .filter {
+        float: none;
+        width: 100%;
+        margin: auto;
+    }
+    .jobs {
+        float: none;
+        width: 100%;
+        margin: auto;
+        padding: auto;
+    }
+}
+
+
+/* End Of jobs Responsive */
+
+
+/* Responsive code for Employer Page */
+
+@media only screen and (max-width: 600px) {
+    .job-image {
+        width: 100%;
+    }
+}
