@@ -1,3 +1,49 @@
+<?php
+                           $conn = mysqli_connect("localhost", "root", "", "jobs");
+                           
+                            if (!$conn) {
+                                die("Connection failed: " . mysqli_connect_error());
+                            }
+
+                           
+                           $sql = "SELECT * FROM post";
+                           $result = mysqli_query($conn, $sql);
+
+                           if (mysqli_num_rows($result) > 0) {
+
+                              while ($row = mysqli_fetch_assoc($result)) 
+                                { 
+                                  echo "<form action='jobsearch.php' method='POST'>"
+                                    echo "<div class='jobs'>";
+                                    echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>";
+                                  echo "<h2><i class='fa fa-crown'></i>" .$row["key_role"]. "</h2>";
+                                  echo "<p><b>Company Name:</b> " .$row["company_name"]. "</p>";
+                                  echo "<p><i class='fa fa-briefcase'></i><b>Experience:</b> " .$row["experience"]. "</p>";
+                                  echo "<p><i class='fa fa-map-marker'></i> <b>Address:</b> " .$row["address"]. "</p>";
+                                  echo "<p><i class='fa fa-wallet'></i> <b>Salary:</b> " .$row["salary"]. "</p>";
+                                  echo "<p class='short'><i></i> <b>Description:</b> " .$row["job_description"]. "</p>";
+                                  echo "<p class='short'><i></i> <b>About Company:</b> " .$row["company_profile"]. "</p>";
+                                  echo "<p><i class='fa fa-crown'></i>Job Id:<input type='text' name='key' value='" .$row["pid"]. "' disabled></p>";
+                                  echo "<button class='search-btn' type='submit'>Apply</button>";
+                                  echo "</div></div>";
+                                  echo "</form>"
+
+                                  
+                                }   
+                              } else {
+                                      echo "0 results";
+                              }
+                              mysqli_close($conn);
+                          ?> 
+
+
+
+
+
+
+
+
+
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4 foot">
 
@@ -221,3 +267,93 @@
 </body>
 
 </html>
+
+
+
+
+
+
+<!-- Check box of search -->
+<form method="POST" action="search.php">
+            <h1>Filter</h1>
+            <!-- <div class="form-group">
+                <label for="inputState">Freshness</label>
+                <select id="inputState" class="form-control">
+                      <option selected value="">Last 30 Days</option>
+                      <option>Last 15 Days</option>
+                      <option>Last 7 Days</option>
+                      <option>Last 3 Days</option>
+                    </select>
+            </div> -->
+            <label for="inputState">Location</label>
+            <div class="form-check">
+                <input class="form-check-input" name="location" type="checkbox" value="Bangalore" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Bangalore</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="location" type="checkbox" value="Delhi" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Delhi</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="location" type="checkbox" value="Chennai" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Chennai</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="location" type="checkbox" value="Chennai" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Mumbai</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="location" type="checkbox" value="Kolkata" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Kolkata</label>
+
+            </div>
+            <br />
+            <label for="inputState">Industry</label>
+            <div class="form-check">
+                <input class="form-check-input" name="key" type="checkbox" value="IT" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">IT-Software</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="key" type="checkbox" value="Recruitment" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Teaching</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="key" type="checkbox" value="Banking" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Banking</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="key" type="checkbox" value="BPO" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">BPO</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="key" type="checkbox" value="Education" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Education</label>
+
+            </div>
+
+            <br />
+            <label for="inputState">Education</label>
+            <div class="form-check">
+                <input class="form-check-input" name="key" type="checkbox" value="Any" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Any Graduate</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" name="key" type="checkbox" value="BE" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">BE/B.Tech</label>
+            </div>
+            <!-- <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Graduation Not Required</label>
+            </div> -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Post Graduation</label>
+            </div>
+            <!-- <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">Post Graduation Not Required</label>
+
+            </div> -->
+            <button class="search-btn" type="submit">Search</button>
+
+    <!-- End of checkbox -->

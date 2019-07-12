@@ -134,12 +134,20 @@ a:hover {
 .filter {
     width: 20%;
     float: left;
+    /*position: fixed;*/
 }
+.filter input[type=text] {
+        width: 200px;
+        margin-bottom: 6%;
+    }
+    
+    
+
 
 .jobs {
     margin-left: 2%;
-    width: 58%;
-    float: left;
+    width: 70%;
+    float: right;
 }
 
 .job-image {
@@ -204,4 +212,16 @@ a:hover {
     .job-image {
         width: 100%;
     }
+}
+
+
+/* End Of Employer Responsive */
+
+
+
+.short {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75ch;
 }
