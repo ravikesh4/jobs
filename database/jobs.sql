@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2019 at 11:11 AM
+-- Generation Time: Jul 13, 2019 at 01:59 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `jobs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `applied`
+--
+
+CREATE TABLE `applied` (
+  `id` int(10) NOT NULL,
+  `key_role` varchar(50) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `applied`
+--
+
+INSERT INTO `applied` (`id`, `key_role`, `company_name`, `email`, `date`) VALUES
+(1, 'web developer', 'Evineon', 'ravikeshyadav4@gmail.com', '2019-07-13 10:24:10'),
+(6, 'web developer', 'Evineon', 'ravikeshyadav20@gmail.com', '2019-07-13 10:56:52'),
+(7, 'TEACHING', 'Evineon', 'ravikeshyadav20@gmail.com', '2019-07-13 11:55:18');
 
 -- --------------------------------------------------------
 
@@ -121,11 +144,18 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`uid`, `fname`, `lname`, `email`, `pwd`, `exp_year`, `exp_month`, `resume`, `time`) VALUES
 (1, 'RAVIKESH', 'YADAV', 'ravikeshyadav4@gmail.com', '1234', 0, 0, '', '2019-07-11'),
-(2, 'Shiba', 'Prasad', 'shiba@gmail.com', 'shiba', 0, 0, '', '2019-07-11');
+(2, 'Shiba', 'Prasad', 'shiba@gmail.com', 'shiba', 0, 0, '', '2019-07-11'),
+(3, 'RAVIKESH', 'YADAV', 'ravikeshyadav20@gmail.com', '1234', 0, 0, 'http://drive.com', '2019-07-12');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `applied`
+--
+ALTER TABLE `applied`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contact`
@@ -158,6 +188,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `applied`
+--
+ALTER TABLE `applied`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
@@ -179,7 +215,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `uid` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
