@@ -1,16 +1,13 @@
+<!-- $email = $_SESSION['email']; -->
 <?php
-    session_start();
-    // $email = $_SESSION['email'];
-?>
-<?php
-    include_once('header.php');
+    include_once('uheader.php');
 ?>
     <br>
-            <form action="jobsearch.php" method="POST">
+            <form action="applied.php" method="POST">
             <?php
         	$conn = mysqli_connect("localhost", "root", "" , "jobs");
 
-        	$search = $_POST['id'];
+        	$search = $_GET['pid'];
 
         	if($search) {
         		$sql = "SELECT * FROM post WHERE pid='$search'";
@@ -28,9 +25,18 @@
                     echo "<p><b>Salary:</b> " .$row["salary"]. "</p>";
                     echo "<p> <b>Description:</b> " .$row["job_description"]. "</p>";
                     echo "<p> <b>About Company:</b> " .$row["company_profile"]. "</p>";
-                    echo "<p>Job Id:<input type='text' name='id' value='" .$row["pid"]. "' disabled></p>";
-                    echo "<button class='search-btn' type='submit'>Apply</button>";
-                    echo "</div></div>";
+                    // echo "<p>Job Id:<input type='text' name='id' value='" .$row["pid"]. "' disabled></p>";
+                    // echo "<button class='search-btn' type='submit'>Apply</button>";
+                    echo "";
+                    ?>
+                    <input type="hidden" name="key" value="<?php echo $row['key_role'] ?>">
+                    <input type="hidden" name="company" value="<?php echo $row['company_name'] ?>">
+                    <input type="hidden" name="email" value="<?php echo $email ?>">
+                    <!-- <input type="hidden" name="job" value="<?php echo $company_name ?>"> -->
+                    <button class='search-btn' type='submit'>Apply</button>
+                    </div></div>
+
+                    <?php
                 }   
                 } else {
                     echo "0 results";
@@ -38,7 +44,7 @@
                 }
                 mysqli_close($conn);
             ?> 
-        </form>
+        <!-- </form> -->
 
 <br>
 

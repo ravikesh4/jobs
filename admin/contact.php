@@ -1,7 +1,7 @@
 <?php
 	include_once('header.php');
 ?>
-	<h1 style="text-align: center">List Of Users</h1><br>
+	<h1 style="text-align: center">List Of Messages</h1><br>
 	<table class="container table table-hover">
 	  <thead>
 	    <tr>

@@ -5,7 +5,7 @@
 
     <div class="container">
         <div class="filter">
-            <form method="POST" action="search.php">
+            <form method="POST" action="search1.php">
              <div class="form-box">
                 <h4>Search Here</h4>
                 <input type="text" class="search-field skills" name="key" placeholder="Skills, Keywords..." />
@@ -15,7 +15,7 @@
         </form>
         </div>
         
-                        <form action="jobsearch.php" method="POST">
+                        <form action="jobsearch.php" method="GET">
                         <?php
                            $conn = mysqli_connect("localhost", "root", "", "jobs");
                            // Check connection
@@ -40,9 +40,10 @@
                                   echo "<p><b>Salary:</b> " .$row["salary"]. "</p>";
                                   echo "<p class='short'> <b>Description:</b> " .$row["job_description"]. "</p>";
                                   echo "<p class='short'> <b>About Company:</b> " .$row["company_profile"]. "</p>";
-                                  echo "<b>Job Id:</b><input type='text' name='id' value='" .$row["pid"]. "' >";
-                                  echo "";
-                                  echo "<button style='margin-left:10%' class='search-btn' type='submit'>Apply</button>";
+                                ?>
+                                  <!-- echo "<b>Job Id:</b><input type='text' name='id' value='" .$row["pid"]. "'>"; -->
+                                  <a href="jobsearch.php?pid=<?php  echo $row['pid']; ?>" style="margin-left:10%" class="btn btn-primary search-btn" >Apply</a>
+                                <?php
                                   echo "</div></div>";
 
                                   

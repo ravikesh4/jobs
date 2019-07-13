@@ -1,6 +1,8 @@
 <?php
     session_start();
     $email = $_SESSION['email'];
+    // $company_name = $_SESSION['company_name'];
+    // $key_role = $_SESSION['key_role'];
     if (!isset($_SESSION['email']) && empty($_SESSION['email']) ) {
         echo ('<meta http-equiv="refresh" content="0; URL=elogin.php">');
 }
@@ -57,9 +59,14 @@
 <div class="container">
 
 
-                    <form action="jobapplied.php" method="POST">
+
 
                         <?php
+                        $key = $_POST['key'];
+                        $company = $_POST['company'];
+
+                        
+                         
                            $conn = mysqli_connect("localhost", "root", "", "jobs");
                            // Check connection
                             if (!$conn) {
@@ -67,50 +74,33 @@
                             }
 
                            
-                           $sql = "SELECT * FROM post where email='$email'";
+                           $sql = "SELECT * FROM applied WHERE key_role='$key' AND company_name='$company'";
+                           // if (isset($_SESSION['key_role']) && isset($_SESSION['name']) ) {
+                                  
+                            
                            $result = mysqli_query($conn, $sql);
-
+                           echo "<h2>Applied User Email Id:</h2>";
+                           echo "<ol>";
                            if (mysqli_num_rows($result) > 0) {
 
                               while ($row = mysqli_fetch_assoc($result)) 
                                 { 
-                                    echo "<div class='index'>";
-                                    echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>";
-                                  echo "<h2>" .$row["key_role"]. "</h2>";
-                                  echo "<p><b>Company Name:</b> " .$row["company_name"]. "</p>";
-                                  echo "<p><b>Experience:</b> " .$row["experience"]. "</p>";
-                                  echo "<p><b>Address:</b> " .$row["address"]. "</p>";
-                                  echo "<p> <b>Salary:</b> " .$row["salary"]. "</p>";
-                                  echo "<p class='short'> <b>Description:</b> " .$row["job_description"]. "</p>";
-                                  echo "<p class='short'><b>About Company:</b> " .$row["company_profile"]. "</p>";
-                                  echo "<p></i>Job Id: " .$row["pid"]. "</p>";
-                                  echo "";
+                                  
+                                   echo "<li>" .$row["email"]. "</li>";
                                   
                                   
+                                }  
                                 ?>
-
                                 
-                                  <input type="hidden" name="key" value="<?php echo $row['key_role'] ?>">
-                                  <input type="hidden" name="company" value="<?php echo $row['company_name'] ?>">
-                                  <button class='btn btn-success' type='submit'>See Applicant</button>
-                                </form>
-                                  </div></div>
-
-                                <?php
-                                } 
+                                
+                                <?php 
+                                echo "</ol>";
                               } else {
                                       echo "0 results";
                               }
+                              
                               mysqli_close($conn);
                           ?> 
-
-
-                          <div class="find container">
-                            <h1 >Post a new job</h1>
-                            <div>
-                                <a href="jobpost.php" class="btn btn-outline-success post">Post A Job</a>
-                            </div>
-                        </div>
 
 
 

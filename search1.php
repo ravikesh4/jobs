@@ -1,5 +1,5 @@
 <?php
-    include_once('header.php');
+    include_once('uheader.php');
 ?>
     <br>
 
@@ -33,22 +33,18 @@
             </div>
         </form>
         </div>
-        
-              <form action="jobsearch.php" method="GET">
-                        <?php
-                           $conn = mysqli_connect("localhost", "root", "", "jobs");
-                           // Check connection
-                            if (!$conn) {
-                                die("Connection failed: " . mysqli_connect_error());
-                            }
 
-                           
-                           $sql = "SELECT * FROM post";
-                           $result = mysqli_query($conn, $sql);
+        <?php
+        	$conn = mysqli_connect("localhost", "root", "" , "jobs");
 
-                           if (mysqli_num_rows($result) > 0) {
+        	$search = $_POST['key'];
+        	$location = $_POST['location'];
 
-                              while ($row = mysqli_fetch_assoc($result)) 
+        	if($search || $location) {
+        		$show = "SELECT * FROM post WHERE key_role = '$search' || address = '$location'";
+        		$result = mysqli_query($conn, $show);
+
+        		 while ($row = mysqli_fetch_assoc($result)) 
                                 { 
                                     echo "<div class='jobs'>";
                                     echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>";
@@ -73,10 +69,7 @@
                               mysqli_close($conn);
                           ?> 
 
-                      </form>
-                
-            
-    </div>
+	 </div>
 
 
 

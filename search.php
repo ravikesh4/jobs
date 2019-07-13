@@ -44,23 +44,30 @@
         		$show = "SELECT * FROM post WHERE key_role = '$search' || address = '$location'";
         		$result = mysqli_query($conn, $show);
 
-        		while ($row = mysqli_fetch_array($result)) {
-        			echo "<div class='jobs'>";
-                    echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>";
-                    echo "<h2><i class='fa fa-crown'></i>" .$row["key_role"]. "</h2>";
-                    echo "<p><b>Company Name:</b> " .$row["company_name"]. "</p>";
-                    echo "<p><i class='fa fa-briefcase'></i><b>Experience:</b> " .$row["experience"]. "</p>";
-                    echo "<p><i class='fa fa-map-marker'></i> <b>Address:</b> " .$row["address"]. "</p>";
-                    echo "<p><i class='fa fa-wallet'></i> <b>Salary:</b> " .$row["salary"]. "</p>";
-                    echo "<p class='short'><i></i> <b>Description:</b> " .$row["job_description"]. "</p>";
-                    echo "<p class='short'><i></i> <b>About Company:</b> " .$row["company_profile"]. "</p>";
-                    echo "<p><i class='fa fa-crown'></i>Job Id: " .$row["pid"]. "</p>";
-                    echo "</div></div>";
-        		}
-        		
-                       
-        	}
-        ?>
+        		 while ($row = mysqli_fetch_assoc($result)) 
+                                { 
+                                    echo "<div class='jobs'>";
+                                    echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>";
+                                  echo "<h2>" .$row["key_role"]. "</h2>";
+                                  echo "<p><b>Company Name:</b> " .$row["company_name"]. "</p>";
+                                  echo "<p><b>Experience:</b> " .$row["experience"]. "</p>";
+                                  echo "<p><b>Address:</b> " .$row["address"]. "</p>";
+                                  echo "<p><b>Salary:</b> " .$row["salary"]. "</p>";
+                                  echo "<p class='short'> <b>Description:</b> " .$row["job_description"]. "</p>";
+                                  echo "<p class='short'> <b>About Company:</b> " .$row["company_profile"]. "</p>";
+                                ?>
+                                  <!-- echo "<b>Job Id:</b><input type='text' name='id' value='" .$row["pid"]. "'>"; -->
+                                  <a href="jobsearch.php?pid=<?php  echo $row['pid']; ?>" style="margin-left:10%" class="btn btn-primary search-btn" >Apply</a>
+                                <?php
+                                  echo "</div></div>";
+
+                                  
+                                }   
+                              } else {
+                                      echo "0 results";
+                              }
+                              mysqli_close($conn);
+                          ?> 
 
 	 </div>
 
